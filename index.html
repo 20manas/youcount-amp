@@ -29,6 +29,12 @@ function queryName(){
 		document.getElementById("dp").src=e.items[0].snippet.thumbnails.default.url;
 		document.querySelector("#username").value = e.items[0].snippet.title;
 		username = e.items[0].snippet.channelId.trim();
+		
+		var script = parent.contentWindow.document.createElement("amp-analytics");
+		script.type = "googleanalytics";
+		script.innerHTML = '<script type="application/json">{"vars": {"account": "UA-25460437-7"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script>';
+		parent.contentWindow.document.body.appendChild(script);
+		console.log("done!");
 	})
 }
 var isLive = 0;
