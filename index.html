@@ -89,7 +89,7 @@ body {
 }
 #username {
 	position:fixed;
-	font-family:Lato;
+	font-family:Arial;
 	top:18vh;
 	right: 35vh;
 	border: 2px solid black;
@@ -100,7 +100,7 @@ body {
 }
 #topnum {
 	position:fixed;
-	font-family:Lato;
+	font-family:Arial;
 	bottom:2.5vh;
 	left:0;
 	text-align:center;
@@ -115,24 +115,29 @@ body {
 	position:absolute;
 	right:2.5vh;
 	top:18vh;
-	height:40px;
+	height:15vh;
+	width:15vh;
 	background-color:#e61919;
 	border:0;
 }
 #search img {
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%)0;
 	height:40px;
+	max-height:80%;
 }
 /* Odometer */
 .odometer.odometer-auto-theme,.odometer.odometer-auto-theme .odometer-digit,.odometer.odometer-theme-minimal,.odometer.odometer-theme-minimal .odometer-digit{display:inline-block;position:relative}.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer,.odometer.odometer-theme-minimal .odometer-digit .odometer-digit-spacer{display:inline-block;visibility:hidden}.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner,.odometer.odometer-theme-minimal .odometer-digit .odometer-digit-inner{text-align:left;display:block;position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden}.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon,.odometer.odometer-theme-minimal .odometer-digit .odometer-ribbon{display:block}.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner,.odometer.odometer-theme-minimal .odometer-digit .odometer-ribbon-inner{display:block;-webkit-backface-visibility:hidden}.odometer.odometer-auto-theme .odometer-digit .odometer-value,.odometer.odometer-theme-minimal .odometer-digit .odometer-value{display:block;-webkit-transform:translateZ(0);transform:translateZ(0)}.odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value,.odometer.odometer-theme-minimal .odometer-digit .odometer-value.odometer-last-value{position:absolute}.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner,.odometer.odometer-theme-minimal.odometer-animating-up .odometer-ribbon-inner{-webkit-transition:-webkit-transform .5s;transition:transform .5s}.odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner,.odometer.odometer-auto-theme.odometer-animating-up.odometer-animating .odometer-ribbon-inner,.odometer.odometer-theme-minimal.odometer-animating-down .odometer-ribbon-inner,.odometer.odometer-theme-minimal.odometer-animating-up.odometer-animating .odometer-ribbon-inner{-webkit-transform:translateY(-100%);transform:translateY(-100%)}.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner,.odometer.odometer-theme-minimal.odometer-animating-down.odometer-animating .odometer-ribbon-inner{-webkit-transition:-webkit-transform .5s;transition:transform .5s;-webkit-transform:translateY(0);transform:translateY(0)}
 /*Font*/
-@font-face{font-family:Lato;font-style:normal;font-weight:300;src:local('Lato Light'),local('Lato-Light'),url(https://fonts.gstatic.com/s/lato/v11/EsvMC5un3kjyUhB9ZEPPwg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}
 </style>
 </head>
 <body>
 <div id="prime" class="card">
 <img id="dp" src="">
 <input type="text" id="username" value="">
-<button id="search" onclick="triggerButton();"><img src="/youcount-amp/search.png"</button>
+<button id="search" onclick="triggerButton();"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAMAAABwfJv6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU3NDg4NkZFODlFMTExRTc4NUZFRUYxNzIxNUY2RUI4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU3NDg4NkZGODlFMTExRTc4NUZFRUYxNzIxNUY2RUI4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTc0ODg2RkM4OUUxMTFFNzg1RkVFRjE3MjE1RjZFQjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTc0ODg2RkQ4OUUxMTFFNzg1RkVFRjE3MjE1RjZFQjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4OlZViAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlP/AOW3MEoAAACcSURBVHjavNRBEsMwCANA6f+f7iVJDQhQDi232DuOBwNgDACUgYjumCBidBA1JAQ2idPlaxSoDshL0K4uPrDmo8AmcWn9gvoxIsQIESG5HulDvIHkLv8Mz80fpGf6uQvTE9pF4ZeZXbh+K4imqx0L1Z+qt6cBkNPT0HTNaUiFM8exd370tZiSZEHs8Cs3+MgVsh/r/T09SVN+BBgAJTsEqLBLraIAAAAASUVORK5CYII="></button>
 <div id="topnum">
 <br>
 <span class="count_live"></span>
