@@ -7,8 +7,8 @@ var te = location.hash.split("#!/")[1];
 var rawInput = te.trim();
 var keyIndex = 0,username;
 function getText(url, callback) {
-	var request = new XMLHttpRequest();
-	request.onreadystatechange = function() {
+	let request = new XMLHttpRequest();
+	request.onreadystatechange = () => {
 		if(request.readyState == 4) {
 			if(request.status == 200) {
 				callback(JSON.parse(request.responseText));
@@ -24,21 +24,19 @@ function queryName(){
 			document.querySelector("#username").value = "Not Found!";
 			return;
 		}
-		document.getElementById("dp").src=e.items[0].snippet.thumbnails.default.url;
+		document.getElementById("dp").src = e.items[0].snippet.thumbnails.default.url;
 		document.querySelector("#username").value = e.items[0].snippet.title;
 		username = e.items[0].snippet.channelId.trim();
 	})
 }
-var isLive = 0;
+let isLive = 0;
 function live() {
-	var reqType = (username.length>=24 && username.substr(0, 2).toUpperCase() == "UC")?"id":"forUsername";
-	var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&"+reqType+"="+username+"&fields=items/statistics/subscriberCount&key=" + getKey();
-	getText(url, function(e) {
-		if(!username) {
-			return;
-		}
-		var sub_count = e.items[0].statistics.subscriberCount;
-		if(!isLive) {
+	const reqType = (username.length>=24 && username.substr(0, 2).toUpperCase() == "UC")?"id":"forUsername";
+	const url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&"+reqType+"="+username+"&fields=items/statistics/subscriberCount&key=" + getKey();
+	getText(url, (e) => {
+		if (!username) return;
+		const sub_count = e.items[0].statistics.subscriberCount;
+		if (!isLive) {
 			new Odometer({
 				el: document.querySelector(".count_live"),
 				value: sub_count,
@@ -53,7 +51,7 @@ function live() {
 }
 function getKey() {
 	++keyIndex;
-	if(keyIndex==APIkeys.length)keyIndex=0;
+	if (keyIndex == APIkeys.length) keyIndex=0;
 	return APIkeys[keyIndex];
 }
 	queryName();
